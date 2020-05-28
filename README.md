@@ -1,4 +1,4 @@
-# Deploying a NodeJS Application to Exoscale with Docker and CircleCI
+# Deploying a NodeJS Application to AWS with Docker and CircleCI
 
 A minimal NodeJS server with no external dependencies. It runs in a container on port 3000 and it responds with `Version: $APP_VERSION` when called. Port 80 is forwarded from the host to port 3000 on the container.
 
@@ -13,12 +13,12 @@ A minimal NodeJS server with no external dependencies. It runs in a container on
 ## Build
 
 ```bash
-docker build --build-arg APP_VERSION=latest  -t exoscale/circleci-nodejs:latest .
+docker build --build-arg APP_VERSION=latest  -t aws/circleci-nodejs:latest .
 ```
 
 ## Run
 ```bash
-docker run -d --name node_app exoscale/circleci-nodejs:latest
+docker run -d --name node_app aws/circleci-nodejs:latest
 ```
 
 Visit `http://localhost` in a browser or inspect with `curl http://localhost`.
